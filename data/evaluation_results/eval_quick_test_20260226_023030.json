@@ -1,0 +1,343 @@
+{
+  "summary": {
+    "config_name": "quick_test",
+    "timestamp": "2026-02-26T02:30:30.869302",
+    "total_questions": 5,
+    "successful_evaluations": 5,
+    "errors": 0,
+    "overall_metrics": {
+      "avg_keyword_recall": 0.45,
+      "avg_condition_recall": 1.0,
+      "avg_condition_precision": 0.72,
+      "citation_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "hallucination_signals": 0,
+      "avg_retrieval_diversity": 1.0,
+      "avg_latency_seconds": 8.16
+    },
+    "category_metrics": {
+      "factual_retrieval": {
+        "count": 5,
+        "avg_keyword_recall": 0.45,
+        "avg_condition_recall": 1.0,
+        "citation_rate": 1.0,
+        "abstention_accuracy": 1.0,
+        "avg_latency": 8.16
+      }
+    },
+    "difficulty_metrics": {
+      "easy": {
+        "count": 5,
+        "avg_keyword_recall": 0.45,
+        "pass_rate": 0.4
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "question": "What medications are prescribed at discharge for patients with heart failure?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.158,
+        "generation_seconds": 21.689,
+        "total_seconds": 21.849
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 7/7 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 7,
+          "dosages_grounded": 7,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.6,
+          "retrieved_conditions": "{'CHF', 'Stroke', 'AKI'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.6,
+          "keywords_found": [
+            "furosemide",
+            "carvedilol",
+            "empagliflozin"
+          ],
+          "keywords_missing": [
+            "lisinopril",
+            "spironolactone"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 3,
+          "citation_density": 1.92
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What antibiotics are used to treat community-acquired pneumonia?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.025,
+        "generation_seconds": 5.677,
+        "total_seconds": 5.702
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.6,
+          "retrieved_conditions": "{'Sepsis', 'Pneumonia', 'COPD_exacerbation'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.667,
+          "keywords_found": [
+            "ceftriaxone",
+            "azithromycin"
+          ],
+          "keywords_missing": [
+            "amoxicillin"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 2,
+          "citation_density": 2.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "How is acute COPD exacerbation treated in the hospital?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.035,
+        "generation_seconds": 4.205,
+        "total_seconds": 4.241
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 1/1 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 1,
+          "dosages_grounded": 1,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'COPD_exacerbation'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.4,
+          "keywords_found": [
+            "prednisone",
+            "azithromycin"
+          ],
+          "keywords_missing": [
+            "albuterol",
+            "ipratropium",
+            "methylprednisolone"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What is the initial management of sepsis?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.022,
+        "generation_seconds": 5.091,
+        "total_seconds": 5.113
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'Sepsis'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.25,
+          "keywords_found": [
+            "culture"
+          ],
+          "keywords_missing": [
+            "fluid",
+            "antibiotic",
+            "lactate"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What medications are given for diabetic ketoacidosis?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.022,
+        "generation_seconds": 3.873,
+        "total_seconds": 3.896
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.4,
+          "retrieved_conditions": "{'CHF', 'Type2_diabetes', 'AKI'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 3
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.333,
+          "keywords_found": [
+            "insulin"
+          ],
+          "keywords_missing": [
+            "fluid",
+            "potassium"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    }
+  ]
+}

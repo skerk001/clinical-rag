@@ -1,0 +1,1354 @@
+{
+  "summary": {
+    "config_name": "full_evaluation",
+    "timestamp": "2026-02-26T02:33:29.181446",
+    "total_questions": 21,
+    "successful_evaluations": 21,
+    "errors": 0,
+    "overall_metrics": {
+      "avg_keyword_recall": 0.63,
+      "avg_condition_recall": 0.976,
+      "avg_condition_precision": 0.778,
+      "citation_rate": 0.81,
+      "abstention_accuracy": 0.952,
+      "hallucination_signals": 1,
+      "avg_retrieval_diversity": 1.0,
+      "avg_latency_seconds": 6.39
+    },
+    "category_metrics": {
+      "abstention": {
+        "count": 3,
+        "avg_keyword_recall": 0.222,
+        "avg_condition_recall": 1.0,
+        "citation_rate": 0.0,
+        "abstention_accuracy": 0.667,
+        "avg_latency": 5.23
+      },
+      "cross_condition": {
+        "count": 2,
+        "avg_keyword_recall": 1.0,
+        "avg_condition_recall": 1.0,
+        "citation_rate": 1.0,
+        "abstention_accuracy": 1.0,
+        "avg_latency": 8.65
+      },
+      "discharge_instructions": {
+        "count": 3,
+        "avg_keyword_recall": 0.7,
+        "avg_condition_recall": 1.0,
+        "citation_rate": 1.0,
+        "abstention_accuracy": 1.0,
+        "avg_latency": 4.83
+      },
+      "drug_safety": {
+        "count": 3,
+        "avg_keyword_recall": 1.0,
+        "avg_condition_recall": 0.833,
+        "citation_rate": 0.667,
+        "abstention_accuracy": 1.0,
+        "avg_latency": 7.06
+      },
+      "factual_retrieval": {
+        "count": 5,
+        "avg_keyword_recall": 0.41,
+        "avg_condition_recall": 1.0,
+        "citation_rate": 1.0,
+        "abstention_accuracy": 1.0,
+        "avg_latency": 6.74
+      },
+      "specific_detail": {
+        "count": 5,
+        "avg_keyword_recall": 0.683,
+        "avg_condition_recall": 1.0,
+        "citation_rate": 1.0,
+        "abstention_accuracy": 1.0,
+        "avg_latency": 6.37
+      }
+    },
+    "difficulty_metrics": {
+      "easy": {
+        "count": 5,
+        "avg_keyword_recall": 0.41,
+        "pass_rate": 0.2
+      },
+      "medium": {
+        "count": 10,
+        "avg_keyword_recall": 0.752,
+        "pass_rate": 0.9
+      },
+      "hard": {
+        "count": 6,
+        "avg_keyword_recall": 0.611,
+        "pass_rate": 1.0
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "question": "What medications are prescribed at discharge for patients with heart failure?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.08,
+        "generation_seconds": 11.917,
+        "total_seconds": 11.998
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 7/7 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 7,
+          "dosages_grounded": 7,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.6,
+          "retrieved_conditions": "{'CHF', 'AKI', 'Stroke'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.4,
+          "keywords_found": [
+            "furosemide",
+            "empagliflozin"
+          ],
+          "keywords_missing": [
+            "carvedilol",
+            "lisinopril",
+            "spironolactone"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 3,
+          "citation_density": 2.34
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What antibiotics are used to treat community-acquired pneumonia?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.018,
+        "generation_seconds": 5.509,
+        "total_seconds": 5.528
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.6,
+          "retrieved_conditions": "{'Pneumonia', 'COPD_exacerbation', 'Sepsis'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.667,
+          "keywords_found": [
+            "ceftriaxone",
+            "azithromycin"
+          ],
+          "keywords_missing": [
+            "amoxicillin"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 2,
+          "citation_density": 2.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "How is acute COPD exacerbation treated in the hospital?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.025,
+        "generation_seconds": 6.281,
+        "total_seconds": 6.307
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 1/1 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 1,
+          "dosages_grounded": 1,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'COPD_exacerbation'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.4,
+          "keywords_found": [
+            "prednisone",
+            "azithromycin"
+          ],
+          "keywords_missing": [
+            "albuterol",
+            "ipratropium",
+            "methylprednisolone"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What is the initial management of sepsis?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.021,
+        "generation_seconds": 5.415,
+        "total_seconds": 5.437
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'Sepsis'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.25,
+          "keywords_found": [
+            "culture"
+          ],
+          "keywords_missing": [
+            "fluid",
+            "antibiotic",
+            "lactate"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What medications are given for diabetic ketoacidosis?",
+      "category": "factual_retrieval",
+      "difficulty": "easy",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.025,
+        "generation_seconds": 4.415,
+        "total_seconds": 4.44
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.4,
+          "retrieved_conditions": "{'Type2_diabetes', 'CHF', 'AKI'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 3
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.333,
+          "keywords_found": [
+            "insulin"
+          ],
+          "keywords_missing": [
+            "fluid",
+            "potassium"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What is the discharge dose of furosemide for heart failure patients and why was it changed?",
+      "category": "specific_detail",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.02,
+        "generation_seconds": 4.965,
+        "total_seconds": 4.985
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'CHF'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "60mg",
+            "increased",
+            "40mg"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 2,
+          "citation_density": 2.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What new medications were added during the CHF hospitalization and what is the evidence for each?",
+      "category": "specific_detail",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.02,
+        "generation_seconds": 7.72,
+        "total_seconds": 7.741
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 2/2 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 2,
+          "dosages_grounded": 2,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.6,
+          "retrieved_conditions": "{'COPD_exacerbation', 'CHF', 'Sepsis'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 3
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "spironolactone",
+            "empagliflozin",
+            "SGLT2"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 2,
+          "citation_density": 1.94
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What were the patient's lab values on admission for acute kidney injury?",
+      "category": "specific_detail",
+      "difficulty": "medium",
+      "confidence": "MEDIUM",
+      "latency": {
+        "retrieval_seconds": 0.022,
+        "generation_seconds": 7.723,
+        "total_seconds": 7.746
+      },
+      "groundedness": {
+        "is_grounded": false,
+        "grounding_score": 0.5,
+        "flagged_terms": [
+          "eGFR of 8"
+        ],
+        "explanation": "⚠️ Potential hallucination detected. Only 1/2 clinical values were found in source documents. Unverified terms: eGFR of 8",
+        "details": {
+          "dosages_checked": 1,
+          "dosages_grounded": 1,
+          "labs_checked": 1,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.6,
+          "retrieved_conditions": "{'Sepsis', 'AKI'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 2,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "creatinine",
+            "potassium",
+            "5.8",
+            "5.9"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 2,
+          "citation_density": 2.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What caused the acute kidney injury and what medications were discontinued?",
+      "category": "specific_detail",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.024,
+        "generation_seconds": 5.868,
+        "total_seconds": 5.892
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.8,
+          "retrieved_conditions": "{'Sepsis', 'AKI'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 2,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.75,
+          "keywords_found": [
+            "NSAID",
+            "ibuprofen",
+            "lisinopril"
+          ],
+          "keywords_missing": [
+            "triple whammy"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What is the prednisone taper protocol for COPD exacerbation?",
+      "category": "specific_detail",
+      "difficulty": "medium",
+      "confidence": "MEDIUM",
+      "latency": {
+        "retrieval_seconds": 0.024,
+        "generation_seconds": 5.437,
+        "total_seconds": 5.462
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 1/1 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 1,
+          "dosages_grounded": 1,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.8,
+          "retrieved_conditions": "{'COPD_exacerbation', 'CHF'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 2,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.667,
+          "keywords_found": [
+            "40mg",
+            "5-day"
+          ],
+          "keywords_missing": [
+            "REDUCE"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What discharge instructions are given to heart failure patients about daily monitoring?",
+      "category": "discharge_instructions",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.022,
+        "generation_seconds": 4.378,
+        "total_seconds": 4.4
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 1/1 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 1,
+          "dosages_grounded": 1,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.6,
+          "retrieved_conditions": "{'Type2_diabetes', 'CHF', 'AKI'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 1
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.6,
+          "keywords_found": [
+            "weight",
+            "sodium",
+            "2000mg"
+          ],
+          "keywords_missing": [
+            "2 lbs",
+            "5 lbs"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What follow-up appointments are recommended after a stroke?",
+      "category": "discharge_instructions",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.019,
+        "generation_seconds": 4.781,
+        "total_seconds": 4.801
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.8,
+          "retrieved_conditions": "{'COPD_exacerbation', 'Stroke'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 2,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.5,
+          "keywords_found": [
+            "neurology",
+            "cardiology"
+          ],
+          "keywords_missing": [
+            "MRI",
+            "rehabilitation"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What are the warning signs that a COPD patient should return to the emergency department?",
+      "category": "discharge_instructions",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.029,
+        "generation_seconds": 5.254,
+        "total_seconds": 5.284
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'COPD_exacerbation'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "dyspnea",
+            "fever",
+            "hemoptysis"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What drug interactions should be monitored when prescribing spironolactone with an ACE inhibitor?",
+      "category": "drug_safety",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.029,
+        "generation_seconds": 6.41,
+        "total_seconds": 6.44
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'CHF'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "hyperkalemia",
+            "potassium",
+            "monitoring"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 1,
+          "citation_density": 1.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "Why should NSAIDs be avoided in patients with chronic kidney disease?",
+      "category": "drug_safety",
+      "difficulty": "medium",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.034,
+        "generation_seconds": 10.492,
+        "total_seconds": 10.526
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'AKI'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "NSAID",
+            "kidney",
+            "vasoconstriction",
+            "afferent"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 3,
+          "citation_density": 1.89
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What precautions should be taken with empagliflozin during acute illness?",
+      "category": "drug_safety",
+      "difficulty": "hard",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.028,
+        "generation_seconds": 4.191,
+        "total_seconds": 4.219
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 0.5,
+          "condition_precision": 0.2,
+          "retrieved_conditions": "{'Type2_diabetes', 'AKI', 'Sepsis', 'Stroke'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 4,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "hold",
+            "euglycemic",
+            "DKA",
+            "dehydration"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": false,
+          "citation_count": 0,
+          "citation_density": 0.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What is the recommended dosing of remdesivir for COVID-19?",
+      "category": "abstention",
+      "difficulty": "hard",
+      "confidence": "INSUFFICIENT",
+      "latency": {
+        "retrieval_seconds": 0.026,
+        "generation_seconds": 3.38,
+        "total_seconds": 3.406
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.0,
+          "retrieved_conditions": "set()",
+          "is_abstention_question": true
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 3,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.333,
+          "keywords_found": [
+            "not contain"
+          ],
+          "keywords_missing": [
+            "insufficient",
+            "not available"
+          ],
+          "forbidden_found": [
+            "remdesivir"
+          ],
+          "has_hallucination_signal": true
+        },
+        "citation_quality": {
+          "has_citations": false,
+          "citation_count": 0,
+          "citation_density": 0.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": true,
+          "is_abstention_question": true
+        }
+      }
+    },
+    {
+      "question": "What surgical procedures are recommended for heart failure patients?",
+      "category": "abstention",
+      "difficulty": "hard",
+      "confidence": "MEDIUM",
+      "latency": {
+        "retrieval_seconds": 0.022,
+        "generation_seconds": 6.072,
+        "total_seconds": 6.095
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.0,
+          "retrieved_conditions": "set()",
+          "is_abstention_question": true
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 1,
+          "unique_doc_types": 1
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "not contain",
+            "insufficient",
+            "not available"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": false,
+          "citation_count": 0,
+          "citation_density": 0.0
+        },
+        "abstention": {
+          "correct_behavior": false,
+          "did_abstain": false,
+          "is_abstention_question": true
+        }
+      }
+    },
+    {
+      "question": "What is the average length of stay for pneumonia patients in this dataset?",
+      "category": "abstention",
+      "difficulty": "hard",
+      "confidence": "INSUFFICIENT",
+      "latency": {
+        "retrieval_seconds": 0.025,
+        "generation_seconds": 6.152,
+        "total_seconds": 6.178
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 0.0,
+          "retrieved_conditions": "set()",
+          "is_abstention_question": true
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 2,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 0.333,
+          "keywords_found": [
+            "not contain"
+          ],
+          "keywords_missing": [
+            "insufficient",
+            "not available"
+          ],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": false,
+          "citation_count": 0,
+          "citation_density": 0.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": true,
+          "is_abstention_question": true
+        }
+      }
+    },
+    {
+      "question": "Which conditions in these records require anticoagulation therapy and what agents are used?",
+      "category": "cross_condition",
+      "difficulty": "hard",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.027,
+        "generation_seconds": 8.446,
+        "total_seconds": 8.474
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 1/1 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 1,
+          "dosages_grounded": 1,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'CHF', 'Stroke'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 2,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "apixaban",
+            "atrial fibrillation"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 2,
+          "citation_density": 2.0
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    },
+    {
+      "question": "What role do SGLT2 inhibitors play across different conditions in these documents?",
+      "category": "cross_condition",
+      "difficulty": "hard",
+      "confidence": "HIGH",
+      "latency": {
+        "retrieval_seconds": 0.03,
+        "generation_seconds": 8.802,
+        "total_seconds": 8.832
+      },
+      "groundedness": {
+        "is_grounded": true,
+        "grounding_score": 1.0,
+        "flagged_terms": [],
+        "explanation": "Response appears well-grounded. 0/0 clinical values verified in source documents.",
+        "details": {
+          "dosages_checked": 0,
+          "dosages_grounded": 0,
+          "labs_checked": 0,
+          "labs_grounded": 0
+        }
+      },
+      "retrieval": {
+        "condition_match": {
+          "condition_recall": 1.0,
+          "condition_precision": 1.0,
+          "retrieved_conditions": "{'Type2_diabetes', 'CHF'}",
+          "is_abstention_question": false
+        },
+        "diversity": {
+          "unique_text_ratio": 1.0,
+          "unique_conditions": 2,
+          "unique_doc_types": 2
+        }
+      },
+      "answer_quality": {
+        "keyword_coverage": {
+          "keyword_recall": 1.0,
+          "keywords_found": [
+            "empagliflozin",
+            "heart failure",
+            "diabetes",
+            "cardiorenal"
+          ],
+          "keywords_missing": [],
+          "forbidden_found": [],
+          "has_hallucination_signal": false
+        },
+        "citation_quality": {
+          "has_citations": true,
+          "citation_count": 3,
+          "citation_density": 2.86
+        },
+        "abstention": {
+          "correct_behavior": true,
+          "did_abstain": false,
+          "is_abstention_question": false
+        }
+      }
+    }
+  ]
+}

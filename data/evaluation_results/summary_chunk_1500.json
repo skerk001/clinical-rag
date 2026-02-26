@@ -1,0 +1,84 @@
+{
+  "config_name": "chunk_1500",
+  "timestamp": "2026-02-26T03:28:14.980264",
+  "total_questions": 21,
+  "successful_evaluations": 21,
+  "errors": 0,
+  "overall_metrics": {
+    "avg_keyword_recall": 0.597,
+    "avg_condition_recall": 1.0,
+    "avg_condition_precision": 0.822,
+    "citation_rate": 0.81,
+    "abstention_accuracy": 0.857,
+    "hallucination_signals": 1,
+    "avg_retrieval_diversity": 0.99,
+    "avg_latency_seconds": 16.63
+  },
+  "category_metrics": {
+    "abstention": {
+      "count": 3,
+      "avg_keyword_recall": 0.111,
+      "avg_condition_recall": 1.0,
+      "citation_rate": 0.0,
+      "abstention_accuracy": 0.333,
+      "avg_latency": 13.77
+    },
+    "cross_condition": {
+      "count": 2,
+      "avg_keyword_recall": 1.0,
+      "avg_condition_recall": 1.0,
+      "citation_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "avg_latency": 16.2
+    },
+    "discharge_instructions": {
+      "count": 3,
+      "avg_keyword_recall": 0.694,
+      "avg_condition_recall": 1.0,
+      "citation_rate": 0.667,
+      "abstention_accuracy": 1.0,
+      "avg_latency": 12.67
+    },
+    "drug_safety": {
+      "count": 3,
+      "avg_keyword_recall": 1.0,
+      "avg_condition_recall": 1.0,
+      "citation_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "avg_latency": 16.98
+    },
+    "factual_retrieval": {
+      "count": 5,
+      "avg_keyword_recall": 0.423,
+      "avg_condition_recall": 1.0,
+      "citation_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "avg_latency": 20.01
+    },
+    "specific_detail": {
+      "count": 5,
+      "avg_keyword_recall": 0.6,
+      "avg_condition_recall": 1.0,
+      "citation_rate": 1.0,
+      "abstention_accuracy": 0.8,
+      "avg_latency": 17.3
+    }
+  },
+  "difficulty_metrics": {
+    "easy": {
+      "count": 5,
+      "avg_keyword_recall": 0.423,
+      "pass_rate": 0.4
+    },
+    "medium": {
+      "count": 10,
+      "avg_keyword_recall": 0.708,
+      "pass_rate": 0.7
+    },
+    "hard": {
+      "count": 6,
+      "avg_keyword_recall": 0.555,
+      "pass_rate": 1.0
+    }
+  }
+}
