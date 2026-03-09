@@ -215,7 +215,7 @@ The system uses **Llama 3 8B** via Ollama for fully local inference, **LangChain
 
 ## Author
 
-**Samir Kerkar** — Clinical Data Analyst with 4+ years of EHR data experience across 50,000+ patients and 20+ facilities. Co-authored clinical research on pharmacist-led interventions presented at ASHP conferences, with a manuscript currently under peer review. Background in mathematics (BS, UC Irvine) with applied experience in predictive modeling, cost-effectiveness analysis, and computer vision research (F1=0.94 on diabetic retinopathy classification).
+**Samir Kerkar** — Clinical Data Scientist with 4+ years of EHR data experience across 50,000+ patients and 20+ facilities. Co-authored clinical research on pharmacist-led interventions presented at ASHP conferences, with a manuscript currently under peer review. Background in mathematics (BS, UC Irvine) with applied experience in predictive modeling, cost-effectiveness analysis, and computer vision research (F1=0.94 on diabetic retinopathy classification).
 
 [Email](mailto:Samir2000VIP@gmail.com)
 
